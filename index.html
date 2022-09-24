@@ -1,0 +1,96 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+ <div class="wrapper">
+    <div class="left-col">
+        <img src="images/logo.png" alt="" class="logo">
+        <div class="content">
+            <h1>Macbook Pro</h1>
+            <p>The most powerful MacBook Pro ever is here. With the blazing-fast M1 Pro or M1 Max chip — the first Apple silicon designed for pros — you get groundbreaking performance and amazing battery life. Add to that a stunning Liquid Retina XDR display, the best camera and audio ever in a Mac notebook, and all the ports you need. The first notebook of its kind, this MacBook Pro is a beast.</p>
+            <button type="button"><a>Buy Today</a></button>
+        </div>
+    </div>
+
+    <div class="right-col">
+        <div class="sliders">
+            <img src="images/pic1.jpg" id="Slide">
+        </div>
+
+        <div class="sliders-content">
+            <h2>Pro to the Max.</h2>
+            <hr>
+            <p>M1 Pro and M1 Max scale the amazing M1 architecture to new heights — and for the first time,<br>they bring a system on a chip (SoC) architecture to a pro notebook. Both have more CPU cores,<br>more GPU cores and more unified memory than M1.</p>
+
+            <div class="controller">
+                <img src="images/back.png" id="BackBtn">
+                <div class="v-line"></div>
+                <img src="images/next.png" id="NextBtn">
+            </div>
+
+            <div class="play" onclick="videoToggle();">
+                <i class="fa fa-play"></i><span>Play Video</span>
+            </div>
+            <div class="trailer">
+                <video src="images/trailer.mp4" controls="true"></video>
+                <img src="images/close.png" onclick="videoToggle()" class="close">
+            </div>
+        </div>
+
+    </div>
+ </div>   
+ 
+ <script>
+
+    function videoToggle(){
+        var trailer = document.querySelector(".trailer");
+        var video = document.querySelector("video");
+        trailer.classList.toggle("active");
+        video.currentTime = 0;
+        video.pause();
+    }
+ </script>
+
+ <script>
+
+    var Slider = document.getElementById("Slide");
+    var BackBtn = document.getElementById("BackBtn");
+    var NextBtn = document.getElementById("NextBtn");
+
+    var sliderimages = new Array(
+        "images/pic1.jpg",
+        "images/pic2.jpg",
+        "images/pic3.jpg",
+        "images/pic4.jpg"
+    );
+
+    let i = 0;
+
+    NextBtn.onclick = function(){
+        if(i < 3){
+            Slide.src = sliderimages[i+1];
+            i++;
+        }
+    }
+
+    BackBtn.onclick = function(){
+        if(i > 0){
+            Slide.src = sliderimages[i-1];
+            i--;
+        }
+    }
+
+
+ </script>
+
+   
+
+</body>
+</html>
